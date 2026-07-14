@@ -1,0 +1,23 @@
+namespace: demo
+items:
+  ornate_sword:
+    display_name: "Ornate Sword"
+    material: netherite_sword
+    custom_model_data: 42
+    model:
+      path: assets/demo/models/ornate_sword.json
+      texture: assets/demo/textures/ornate_sword.png
+      rotation: [45, 90, 0]
+      parts:
+        - name: blade
+          origin: [0, 0, 0]
+          size: [2, 16, 2]
+        - name: hilt
+          origin: [0, -2, 0]
+          size: [4, 4, 4]
+  gilded_axe:
+    display_name: "Gilded Axe"
+    material: golden_axe
+    model:
+      path: assets/demo/models/gilded_axe.json
+      texture: assets/demo/textures/gilded_axe.png

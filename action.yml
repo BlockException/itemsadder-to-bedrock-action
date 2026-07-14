@@ -1,0 +1,51 @@
+name: itemsadder-to-bedrock
+
+description: Converts ItemsAdder config into Bedrock-compatible mcpack output.
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - --input
+    - ${{ inputs.input-path }}
+    - --output-dir
+    - ${{ inputs.output-dir }}
+    - --output-name
+    - ${{ inputs.output-name }}
+    - --report-format
+    - ${{ inputs.report-format }}
+    - --fail-on
+    - ${{ inputs.fail-on }}
+inputs:
+  input-path:
+    description: Path to the YAML input file or directory to convert.
+    required: true
+    default: ./input
+  output-dir:
+    description: Directory for generated output files.
+    required: false
+    default: ./output
+  output-name:
+    description: Base filename for the generated mcpack artifact.
+    required: false
+    default: output
+  report-format:
+    description: Format for the generated compatibility report.
+    required: false
+    default: markdown
+  fail-on:
+    description: Fail the step when one or more assets reach or exceed the specified compatibility severity.
+    required: false
+    default: manual_required
+outputs:
+  mcpack-path:
+    description: Path to the generated mcpack file.
+  report-path:
+    description: Path to the generated compatibility report.
+  full-count:
+    description: Number of assets classified as FULL.
+  partial-count:
+    description: Number of assets classified as PARTIAL.
+  manual-required-count:
+    description: Number of assets classified as MANUAL_REQUIRED.
+  impossible-count:
+    description: Number of assets classified as IMPOSSIBLE.

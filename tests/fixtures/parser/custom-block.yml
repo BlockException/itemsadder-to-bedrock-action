@@ -1,0 +1,8 @@
+namespace: demo
+blocks:
+  crystal_block:
+    display_name: "Crystal Block"
+    material: stone
+    model:
+      path: assets/demo/models/crystal_block.json
+      texture: assets/demo/textures/crystal_block.png

@@ -1,0 +1,7 @@
+version: '3.9'
+services:
+  converter:
+    build: .
+    volumes:
+      - ./:/app
+    command: ["/bin/sh", "-c", "npm run build && node dist/src/cli/index.js tests/fixtures/parser/simple-item.yml dist/out"]

@@ -1,0 +1,30 @@
+namespace: demo
+blocks:
+  crystal_block:
+    display_name: "Crystal Block"
+    material: glass
+    model:
+      path: assets/demo/models/crystal_block.json
+      texture: assets/demo/textures/crystal_block.png
+      rotation: [0, 45, 0]
+      parts:
+        - name: core
+          origin: [2, 2, 2]
+          size: [12, 12, 12]
+        - name: pillar
+          origin: [6, 0, 6]
+          size: [4, 16, 4]
+  prism_block:
+    display_name: "Prism Block"
+    material: prism
+    model:
+      path: assets/demo/models/prism_block.json
+      texture: assets/demo/textures/prism_block.png
+      rotation: [15, 30, 0]
+      parts:
+        - name: top
+          origin: [1, 9, 1]
+          size: [14, 6, 14]
+        - name: base
+          origin: [3, 0, 3]
+          size: [10, 8, 10]

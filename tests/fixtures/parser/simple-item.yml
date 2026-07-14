@@ -1,0 +1,8 @@
+namespace: demo
+items:
+  sword:
+    display_name: "Simple Sword"
+    material: diamond_sword
+    custom_model_data: 1
+    model:
+      path: assets/demo/models/sword.json

@@ -1,0 +1,9 @@
+namespace: demo
+items:
+  custom_sword:
+    display_name: "Custom Sword"
+    material: netherite_sword
+    custom_model_data: 42
+    model:
+      path: assets/demo/models/custom_sword.json
+      texture: assets/demo/textures/custom_sword.png

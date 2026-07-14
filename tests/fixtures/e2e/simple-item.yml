@@ -1,0 +1,14 @@
+namespace: demo
+items:
+  wooden_shovel:
+    display_name: "Wooden Shovel"
+    material: wooden_shovel
+    model:
+      path: assets/demo/models/wooden_shovel.json
+      texture: assets/demo/textures/wooden_shovel.png
+  stone_pickaxe:
+    display_name: "Stone Pickaxe"
+    material: stone_pickaxe
+    model:
+      path: assets/demo/models/stone_pickaxe.json
+      texture: assets/demo/textures/stone_pickaxe.png
