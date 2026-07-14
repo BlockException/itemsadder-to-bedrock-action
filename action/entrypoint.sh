@@ -1,26 +1,24 @@
 #!/bin/sh
 set -eu
 
+SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+PROJECT_ROOT=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)
+CLI_PATH="$PROJECT_ROOT/dist/src/cli/index.js"
+
 INPUT_PATH="${1:-./input}"
 OUTPUT_DIR="${2:-./output}"
 OUTPUT_NAME="${3:-output}"
 REPORT_FORMAT="${4:-markdown}"
 FAIL_ON="${5:-NONE}"
 
-INPUT_PATH="${INPUT_PATH:-./input}"
-OUTPUT_DIR="${OUTPUT_DIR:-./output}"
-OUTPUT_NAME="${OUTPUT_NAME:-output}"
-REPORT_FORMAT="${REPORT_FORMAT:-markdown}"
-FAIL_ON="${FAIL_ON:-NONE}"
-
 mkdir -p "$OUTPUT_DIR"
-RESULT=$(node /app/dist/src/cli/index.js --input "$INPUT_PATH" --output-dir "$OUTPUT_DIR" --output-name "$OUTPUT_NAME" --report-format "$REPORT_FORMAT" --fail-on "$FAIL_ON")
+RESULT=$(node "$CLI_PATH" --input "$INPUT_PATH" --output-dir "$OUTPUT_DIR" --output-name "$OUTPUT_NAME" --report-format "$REPORT_FORMAT" --fail-on "$FAIL_ON")
 
 echo "$RESULT" 1>&2
 
-node <<'NODE' "$RESULT"
+node - "$RESULT" <<'NODE'
 const fs = require('fs');
-const output = JSON.parse(process.argv[1]);
+const output = JSON.parse(process.argv[2]);
 const lines = [
   `mcpack-path=${output.outputPath}`,
   `report-path=${output.reportPath}`,
