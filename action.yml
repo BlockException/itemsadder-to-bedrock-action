@@ -5,15 +5,10 @@ runs:
   using: docker
   image: Dockerfile
   args:
-    - --input
     - ${{ inputs.input-path }}
-    - --output-dir
     - ${{ inputs.output-dir }}
-    - --output-name
     - ${{ inputs.output-name }}
-    - --report-format
     - ${{ inputs.report-format }}
-    - --fail-on
     - ${{ inputs.fail-on }}
 inputs:
   input-path:
