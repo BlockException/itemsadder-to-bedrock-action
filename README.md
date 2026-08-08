@@ -1,6 +1,6 @@
 # ItemsAdder to Bedrock Action
 
-[![CI](https://github.com/haugg/itemsadder-to-bedrock-action/actions/workflows/ci.yml/badge.svg)](https://github.com/haugg/itemsadder-to-bedrock-action/actions/workflows/ci.yml)
+[![CI](https://github.com/blockexception/itemsadder-to-bedrock-action/actions/workflows/ci.yml/badge.svg)](https://github.com/haugg/itemsadder-to-bedrock-action/actions/workflows/ci.yml)
 
 Converts ItemsAdder YAML configuration into a Bedrock-compatible `.mcpack` artifact with a compatibility report. Runs as a GitHub Action inside any repository workflow.
 
