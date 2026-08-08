@@ -16,7 +16,7 @@ RESULT=$(node "$CLI_PATH" --input "$INPUT_PATH" --output-dir "$OUTPUT_DIR" --out
 
 echo "$RESULT" 1>&2
 
-node - "$RESULT" <<'NODE'
+node --input-type=commonjs - "$RESULT" <<'NODE'
 const fs = require('fs');
 const output = JSON.parse(process.argv[2]);
 const lines = [
