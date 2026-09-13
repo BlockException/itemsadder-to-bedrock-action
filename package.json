@@ -8,7 +8,7 @@
     "test": "npm run build && node --test dist/tests/**/*.test.js"
   },
   "dependencies": {
-    "jszip": "^3.10.1",
+    "jszip": "^3.10.2",
     "yaml": "^2.6.1"
   },
   "devDependencies": {
